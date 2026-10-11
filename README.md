@@ -5,7 +5,7 @@
 ![Keras](https://img.shields.io/badge/Keras-Deep%20Learning-red?logo=keras)
 ![Test accuracy](https://img.shields.io/badge/Test%20accuracy-95.4%25-brightgreen)
 
-> *Postgraduate project, St. Clair College.*
+> *Capstone project, Postgraduate Certificate in Data Analytics for Business, St. Clair College.*
 
 Binary image classifier that separates **core sample images** from **well log images** using **transfer learning with ResNet50** (ImageNet weights) in TensorFlow/Keras. The raw dataset was small (tens of images per class), so the project focuses on preprocessing and augmentation to build a usable training set, then trains a classification head on a frozen ResNet50 base.
 
