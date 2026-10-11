@@ -1,15 +1,14 @@
-.PHONY: install install-dev lint format test clean
+.PHONY: install notebook tensorboard clean
+
 install:
 	pip install -r requirements.txt
-install-dev: install
-	pip install pytest pytest-cov black flake8
-lint:
-	flake8 scripts/ --max-line-length=100 --ignore=E501,W503
-	black --check --line-length 100 scripts/
-format:
-	black --line-length 100 scripts/
-test:
-	pytest tests/ -v --cov=scripts/ --cov-report=term-missing
+
+notebook:
+	jupyter notebook
+
+tensorboard:
+	tensorboard --logdir=logs/
+
 clean:
+	find . -type d -name .ipynb_checkpoints -exec rm -rf {} + 2>/dev/null || true
 	find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
-	rm -rf .coverage htmlcov/ .pytest_cache/

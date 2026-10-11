@@ -1,0 +1,9 @@
+tensorflow>=2.8
+numpy<2.0
+opencv-python
+pillow
+scikit-image
+imgaug
+scikit-learn
+matplotlib
+jupyter

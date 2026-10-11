@@ -54,16 +54,25 @@ cnn_tl_res.ipynb
 ├── Dataset/                   # raw images (Core, Well Log)
 ├── Augmented Dataset/         # 400 augmented images per class
 ├── Split Data/                # Train / Valid / Test folders
-└── logs/                      # TensorBoard logs
+├── logs/                      # TensorBoard logs from training runs
+├── requirements.txt           # Python dependencies
+├── pyproject.toml             # project metadata
+└── Makefile                   # install / notebook / tensorboard / clean
 ```
 
 ## Setup
 ```bash
 git clone https://github.com/jaiminbabariya7/ImageSegregation_TransferLearning
 cd ImageSegregation_TransferLearning
-pip install tensorflow opencv-python pillow scikit-image imgaug scikit-learn matplotlib numpy
+make install        # pip install -r requirements.txt
+make notebook       # launch Jupyter
 ```
-Open the notebooks in order (`data_preprocessing.ipynb`, then `cnn_tl_res.ipynb`) and update the hard-coded dataset paths at the top of each notebook to your local folders.
+1. Update the hard-coded dataset paths at the top of each notebook to your local folders.
+2. Run `data_preprocessing.ipynb` to create `Augmented Dataset/`.
+3. Run `cnn_tl_res.ipynb` to split the data, train and evaluate the model.
+4. Optional: `make tensorboard` to view the training curves from `logs/`.
+
+`numpy<2.0` is pinned because the notebooks use `np.math` and `imgaug`, which are not compatible with NumPy 2.
 
 ## Skills demonstrated
 `TensorFlow` · `Keras` · `Transfer Learning` · `ResNet50` · `OpenCV` · `imgaug` · `Data Augmentation` · `Image Classification` · `TensorBoard` · `scikit-learn`
