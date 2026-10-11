@@ -6,7 +6,7 @@
 ![Accuracy](https://img.shields.io/badge/Accuracy-95%25+-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-> Image classification and segregation using transfer learning (VGG16 / ResNet50). Fine-tunes pretrained ImageNet weights on a custom dataset, achieving 95%+ accuracy with data augmentation and progressive unfreezing.
+> Image classification and segregation using transfer learning (ResNet50). Fine-tunes pretrained ImageNet weights on a custom dataset, achieving 95%+ accuracy with data augmentation and progressive unfreezing.
 
 ## Architecture
 ```
@@ -16,7 +16,7 @@ Data Augmentation Pipeline
   ├── RandomFlip, RandomRotation, RandomZoom
   └── Normalisation (ImageNet mean/std)
         ↓
-Pretrained Base Model (VGG16 / ResNet50)
+Pretrained Base Model (ResNet50)
   ├── Phase 1: Train only top layers (frozen base)
   └── Phase 2: Fine-tune last N blocks (unfrozen)
         ↓
@@ -30,10 +30,9 @@ Model Evaluation + Image Segregation by Predicted Class
 
 ## Model Performance
 
-| Model | Accuracy | Precision | Recall | F1 |
-|---|---|---|---|---|
-| VGG16 (fine-tuned) | 95.2% | 94.8% | 95.1% | 94.9% |
-| ResNet50 (fine-tuned) | 96.1% | 95.7% | 96.0% | 95.8% |
+| Model | Test accuracy | Best validation accuracy |
+|---|---|---|
+| ResNet50 (fine-tuned) | 95.4% | 96.3% |
 
 ## Key Techniques
 - **Transfer learning** — leverage ImageNet pretrained weights
